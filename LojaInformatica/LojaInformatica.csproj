@@ -1,0 +1,622 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8BCF3F4F-79EB-4DDE-ABEF-2A824CE9EF9A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LojaInformatica</RootNamespace>
+    <AssemblyName>LojaInformatica</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Correios.Net, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Correios.CEP.Net.1.1.6\lib\Correios.Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Runtime.Common.12.0.2402.15\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Runtime.Common.12.0.2402.15\lib\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Runtime.Common.12.0.2402.15\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Runtime.WebForms.12.0.2402.15\lib\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.Types, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.12.0.5000.0\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.8.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="SkinSoft.VisualStyler, Version=2.4.0.0, Culture=neutral, PublicKeyToken=0fda9f423e1d9830, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="classCargo.cs" />
+    <Compile Include="classCategoria.cs" />
+    <Compile Include="classCliente.cs" />
+    <Compile Include="classConexao.cs" />
+    <Compile Include="classFuncionario.cs" />
+    <Compile Include="classItensVendidos.cs" />
+    <Compile Include="classJuncaoVenda.cs" />
+    <Compile Include="classMarca.cs" />
+    <Compile Include="classProduto.cs" />
+    <Compile Include="classVenda.cs" />
+    <Compile Include="FormCargo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCargo.Designer.cs">
+      <DependentUpon>FormCargo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCategoria.Designer.cs">
+      <DependentUpon>FormCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConsulta.Designer.cs">
+      <DependentUpon>FormConsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormConsultaCargo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConsultaCargo.Designer.cs">
+      <DependentUpon>FormConsultaCargo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormConsultaCateg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConsultaCateg.Designer.cs">
+      <DependentUpon>FormConsultaCateg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormConsultaCli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConsultaCli.Designer.cs">
+      <DependentUpon>FormConsultaCli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormConsultaFunc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConsultaFunc.Designer.cs">
+      <DependentUpon>FormConsultaFunc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormConsultaMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConsultaMarca.Designer.cs">
+      <DependentUpon>FormConsultaMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormConsultaProd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConsultaProd.Designer.cs">
+      <DependentUpon>FormConsultaProd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFuncionario.Designer.cs">
+      <DependentUpon>FormFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMarca.Designer.cs">
+      <DependentUpon>FormMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrincipal.Designer.cs">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCliente.Designer.cs">
+      <DependentUpon>FormCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProduto.Designer.cs">
+      <DependentUpon>FormProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRelFunc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRelFunc.Designer.cs">
+      <DependentUpon>FormRelFunc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRelMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRelMarca.Designer.cs">
+      <DependentUpon>FormRelMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRelProd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRelProd.Designer.cs">
+      <DependentUpon>FormRelProd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRelCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRelCliente.Designer.cs">
+      <DependentUpon>FormRelCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRelVendaDet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRelVendaDet.Designer.cs">
+      <DependentUpon>FormRelVendaDet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRelVendaSim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRelVendaSim.Designer.cs">
+      <DependentUpon>FormRelVendaSim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVenda.Designer.cs">
+      <DependentUpon>FormVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Correios\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="FormCargo.resx">
+      <DependentUpon>FormCargo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCategoria.resx">
+      <DependentUpon>FormCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCliente.resx">
+      <DependentUpon>FormCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConsulta.resx">
+      <DependentUpon>FormConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConsultaCargo.resx">
+      <DependentUpon>FormConsultaCargo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConsultaCateg.resx">
+      <DependentUpon>FormConsultaCateg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConsultaCli.resx">
+      <DependentUpon>FormConsultaCli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConsultaFunc.resx">
+      <DependentUpon>FormConsultaFunc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConsultaMarca.resx">
+      <DependentUpon>FormConsultaMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConsultaProd.resx">
+      <DependentUpon>FormConsultaProd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFuncionario.resx">
+      <DependentUpon>FormFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMarca.resx">
+      <DependentUpon>FormMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProduto.resx">
+      <DependentUpon>FormProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRelFunc.resx">
+      <DependentUpon>FormRelFunc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRelMarca.resx">
+      <DependentUpon>FormRelMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRelProd.resx">
+      <DependentUpon>FormRelProd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRelCliente.resx">
+      <DependentUpon>FormRelCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRelVendaDet.resx">
+      <DependentUpon>FormRelVendaDet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRelVendaSim.resx">
+      <DependentUpon>FormRelVendaSim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVenda.resx">
+      <DependentUpon>FormVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="obj\Debug\LojaInformatica.FormCargo.resources" />
+    <EmbeddedResource Include="obj\Debug\LojaInformatica.FormCategoria.resources" />
+    <EmbeddedResource Include="obj\Debug\LojaInformatica.FormCliente.resources" />
+    <EmbeddedResource Include="obj\Debug\LojaInformatica.FormConsulta.resources" />
+    <EmbeddedResource Include="obj\Debug\LojaInformatica.FormConsultaCargo.resources" />
+    <EmbeddedResource Include="obj\Debug\LojaInformatica.FormConsultaCateg.resources" />
+    <EmbeddedResource Include="obj\Debug\LojaInformatica.FormConsultaCli.resources" />
+    <EmbeddedResource Include="obj\Debug\LojaInformatica.FormConsultaFunc.resources" />
+    <EmbeddedResource Include="obj\Debug\LojaInformatica.FormConsultaMarca.resources" />
+    <EmbeddedResource Include="obj\Debug\LojaInformatica.FormConsultaProd.resources" />
+    <EmbeddedResource Include="obj\Debug\LojaInformatica.FormFuncionario.resources" />
+    <EmbeddedResource Include="obj\Debug\LojaInformatica.FormMarca.resources" />
+    <EmbeddedResource Include="obj\Debug\LojaInformatica.FormPrincipal.resources" />
+    <EmbeddedResource Include="obj\Debug\LojaInformatica.FormProduto.resources" />
+    <EmbeddedResource Include="obj\Debug\LojaInformatica.FormRelCliente.resources" />
+    <EmbeddedResource Include="obj\Debug\LojaInformatica.FormRelMarca.resources" />
+    <EmbeddedResource Include="obj\Debug\LojaInformatica.FormVenda.resources" />
+    <EmbeddedResource Include="obj\Debug\LojaInformatica.Properties.Resources.resources" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptRelCliente.rdlc" />
+    <EmbeddedResource Include="rptRelFuncionario.rdlc" />
+    <EmbeddedResource Include="rptRelMarca.rdlc" />
+    <EmbeddedResource Include="rptRelProduto.rdlc" />
+    <EmbeddedResource Include="rptRelVenda.rdlc" />
+    <EmbeddedResource Include="rptRelVendaDeta.rdlc" />
+    <None Include="bin\Debug\LojaInformatica.exe.config" />
+    <None Include="bin\Debug\LojaInformatica.vshost.exe.config" />
+    <None Include="bin\Debug\LojaInformatica.vshost.exe.manifest" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\LojaInformatica.csproj.GenerateResource.Cache" />
+    <None Include="obj\Debug\LojaInformatica.csprojResolveAssemblyReference.cache" />
+    <None Include="obj\Debug\RdlCompile.cache" />
+    <None Include="obj\Debug\RdlCompile.compiled" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\classCliente.datasource" />
+    <None Include="Properties\DataSources\classFuncionario.datasource" />
+    <None Include="Properties\DataSources\classJuncaoVenda.datasource" />
+    <None Include="Properties\DataSources\classMarca.datasource" />
+    <None Include="Properties\DataSources\classProduto.datasource" />
+    <None Include="Properties\DataSources\classVenda.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Service References\Correios\AtendeClienteService.wsdl" />
+    <None Include="Service References\Correios\LojaInformatica.Correios.atualizaPagamentoNaEntregaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.atualizaRemessaAgrupadaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.bloquearObjetoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.buscaClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.buscaContratoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.buscaDataAtualResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.buscaPagamentoEntregaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.buscaServicosAdicionaisAtivosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.buscaServicosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.buscaServicosValorDeclaradoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.buscaServicosXServicosAdicionaisResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.buscaTarifaValeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.calculaTarifaServicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.cancelarObjetoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.cancelarPedidoScolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.clienteERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.consultaCEPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.consultaSROResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.consultaSRO_NEWResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.contratoERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.embalagemLRSMaster.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.enderecoERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.fechaPlpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.fechaPlpVariosServicosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.geraDigitoVerificadorEtiquetasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.getStatusCartaoPostagemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.getStatusPLPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.integrarUsuarioScolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.obterClienteAtualizacaoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.obterEmbalagemLRSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.retornoCancelamento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.servicoAdicionalXML.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.servicoERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.solicitaEtiquetasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.solicitaPLPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.solicitarPostagemScolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.solicitaXmlPlpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.statusCartao.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.statusPlp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.valePostal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.validaEtiquetaPLPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.validaPlpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.validarPostagemReversaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.validarPostagemSimultaneaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.verificaDisponibilidadeServicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Correios\LojaInformatica.Correios.VerificaSeTodosObjetosCanceladosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\Correios\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Correios\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Correios\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Correios\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prancheta 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prancheta 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prancheta 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prancheta 6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prancheta 7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prancheta 8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prancheta 9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prancheta 10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prancheta 11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prancheta 12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prancheta 13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prancheta 14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prancheta 16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prancheta 17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prancheta 18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prancheta 19.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prancheta 20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prancheta 21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prancheta 22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prancheta 23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prancheta 24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prancheta 25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\Correios.Net.dll" />
+    <Content Include="bin\Debug\Correios.Net.pdb" />
+    <Content Include="bin\Debug\de\Microsoft.SqlServer.Types.resources.dll" />
+    <Content Include="bin\Debug\es\Microsoft.SqlServer.Types.resources.dll" />
+    <Content Include="bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll" />
+    <Content Include="bin\Debug\it\Microsoft.SqlServer.Types.resources.dll" />
+    <Content Include="bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll" />
+    <Content Include="bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll" />
+    <Content Include="bin\Debug\LojaInformatica.exe" />
+    <Content Include="bin\Debug\LojaInformatica.pdb" />
+    <Content Include="bin\Debug\LojaInformatica.vshost.exe" />
+    <Content Include="bin\Debug\Microsoft.ReportViewer.WinForms.dll" />
+    <Content Include="bin\Debug\Microsoft.SqlServer.Types.dll" />
+    <Content Include="bin\Debug\MySql.Data.dll" />
+    <Content Include="bin\Debug\MySql.Data.xml" />
+    <Content Include="bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll" />
+    <Content Include="bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll" />
+    <Content Include="bin\Debug\SkinSoft.VisualStyler.dll" />
+    <Content Include="bin\Debug\SkinSoft.VisualStyler.xml" />
+    <Content Include="bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll" />
+    <Content Include="bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll" />
+    <Content Include="obj\Debug\LojaInformatica.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\LojaInformatica.exe" />
+    <Content Include="obj\Debug\LojaInformatica.pdb" />
+    <Content Include="obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Service References.Correios.Reference.cs.dll" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr100.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr100.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\Prancheta 31.png" />
+    <None Include="Resources\Prancheta 26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
