@@ -6,12 +6,12 @@ O projeto de consistia em criar uma sistema Desktop de vendas com gestão de cli
 
 A temática utilizada foi de uma loja de informática. Os tipos de cadastros oferecidos são:
 
- - Cadastro de funcionários
- - Cadastro de Clientes
- - Cadastro de Produtos
- - Cadastro de Categoria de Produtos
- - Cadastro de Marca de Produtos
- - Cadastro de Categoria de Produtos
+ - Cadastro de funcionários;
+ - Cadastro de Clientes;
+ - Cadastro de Produtos;
+ - Cadastro de Categoria de Produtos;
+ - Cadastro de Marca de Produtos;
+ - Cadastro de Categoria de Produtos;
  
  Também foi executado a consulta, atualização e remoção dos dados.
  
