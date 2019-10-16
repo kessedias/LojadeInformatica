@@ -6,6 +6,7 @@ namespace SqlServerTypes
 {
     /// <summary>
     /// Utility methods related to CLR Types for SQL Server 
+    // É isso aí
     /// </summary>
     public class Utilities
     {
