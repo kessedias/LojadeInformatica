@@ -1,0 +1,49 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build outputs
+bin/
+obj/
+
+# Debug / Release
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+
+# NuGet
+packages/
+*.nupkg
+*.snupkg
+
+# Logs
+*.log
+
+# Rider / VSCode
+.idea/
+.vscode/
+
+# SQL Server lixo (nem devia estar no projeto)
+SqlServerTypes/
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Executáveis e símbolos
+*.exe
+*.dll
+*.pdb
+
+*.vsidx
+*.vssscc
+*.vspcc
+*.vspx
+*.vspscc
+*.vspxs
+*.vsps
+*.vsp
